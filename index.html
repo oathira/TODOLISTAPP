@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todostyle.css">
+
+</head>
+</head>
+<body>
+    <div class="container">
+        
+         <div class="box">
+               
+                <h1>TO-DO LIST</h1>
+            
+                <div class="search-box">  
+                    <input type="text" id="txt-item"  placeholder="Add your task" >
+                    <span id="add"></span>
+                 </div>
+
+                  
+          <div class="mid-foot">
+            <span id="delete-all" onclick="removeAll()">Clear All</span>
+            <span id="delete-completed" onclick="complete()">Clear Completed</span>
+            
+          </div>
+         
+            
+     
+                <ul  id="list-container">
+                    <!-- <li class="list-item">
+                         <input type="checkbox" class="custom-checkbox"">
+                         <label for="task1">text1</label>
+                          img src="images/CROSS.png" class="delete">
+                      </li>
+                    -->
+                  </ul>
+               
+                
+                  <div class="to-do-footer">
+                    <span id="total-tasks">Total tasks:<span id="task-count">0</span></span>
+                    <span id="all" onclick=" displayAllTasks()">All</span>
+                    <span id="rem" onclick="displayPendingTasks()">Pending</span>
+                    <span id="com" onclick="displayCompletedTasks()">Completed</span>
+                  </div>     
+                     
+                   
+               
+                   
+                
+                    
+                
+             
+          
+         </div>
+    </div>
+   <script src="todoscript.js"></script>
+</body>
+</html>
