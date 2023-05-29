@@ -22,9 +22,9 @@
                  </div>
 
                   
-          <div class="mid-foot">
-            <span id="delete-all" onclick="removeAll()">Clear All</span>
-            <span id="delete-completed" onclick="complete()">Clear Completed</span>
+          <div class="clear-section">
+            <span id="delete-all" onclick="clearAll()">Clear All</span>
+            <span id="delete-completed" onclick="clearComplete()">Clear Completed</span>
             
           </div>
          
@@ -43,13 +43,17 @@
                   <div class="to-do-footer">
                     <span id="total-tasks">Total tasks:<span id="task-count">0</span></span>
                     <span id="all" onclick=" displayAllTasks()">All</span>
-                    <span id="rem" onclick="displayPendingTasks()">Pending</span>
-                    <span id="com" onclick="displayCompletedTasks()">Completed</span>
+                    <span id="pending" onclick="displayPendingTasks()">Pending</span>
+                    <span id="completed" onclick="displayCompletedTasks()">Completed</span>
                   </div>     
                      
+<!--                    
+                  #task-filter{
+                    display: flex;
+                    justify-content: space-between;
                    
-               
-                   
+                } 
+                    -->
                 
                     
                 
