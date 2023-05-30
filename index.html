@@ -5,62 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <!-- This will link external css file  -->
     <link rel="stylesheet" href="todostyle.css">
 
 </head>
 </head>
 <body>
     <div class="container">
+      <div class="box">
+               
+        <h1>TO-DO LIST</h1>
         
-         <div class="box">
-               
-                <h1>TO-DO LIST</h1>
-            
-                <div class="search-box">  
-                    <input type="text" id="txt-item"  placeholder="Add your task" >
-                    <span id="add"></span>
-                 </div>
-
-                  
-          <div class="clear-section">
-            <span id="delete-all" onclick="clearAll()">Clear All</span>
-            <span id="delete-completed" onclick="clearComplete()">Clear Completed</span>
-            
-          </div>
+        <!--This section for adding todolist items -->
+        <div class="search-box">  
+                <input type="text" id="txt-item"  placeholder="Add your task" >
+                <span id="add"></span>
+        </div>
          
-            
-     
-                <ul  id="list-container">
-                    <!-- <li class="list-item">
-                         <input type="checkbox" class="custom-checkbox"">
-                         <label for="task1">text1</label>
-                          img src="images/CROSS.png" class="delete">
-                      </li>
-                    -->
-                  </ul>
-               
-                
-                  <div class="to-do-footer">
-                    <span id="total-tasks">Total tasks:<span id="task-count">0</span></span>
-                    <span id="all" onclick=" displayAllTasks()">All</span>
-                    <span id="pending" onclick="displayPendingTasks()">Pending</span>
-                    <span id="completed" onclick="displayCompletedTasks()">Completed</span>
-                  </div>     
-                     
-<!--                    
-                  #task-filter{
-                    display: flex;
-                    justify-content: space-between;
-                   
-                } 
-                    -->
-                
-                    
-                
-             
+        <!--section used to clear all tasks || to clear only completed tasks -->
+        <div class="clear-section">
+          <span id="delete-all" onclick="clearAll()">Clear All</span>
+          <span id="delete-completed" onclick="clearComplete()">Clear Completed</span>
           
-         </div>
+        </div>
+        
+        <!-- This section will display the tasks -->
+        <div class="list-display">
+          <ul  id="list-container">
+          <!-- <li class="list-item">
+                <input type="checkbox" class="custom-checkbox"">
+                <label for="task1">text1</label>
+                img src="images/CROSS.png" class="delete">
+               </li>
+          -->
+          </ul>
+       </div>       
+        
+       <!-- This section to contain total tasks and other filter tasks -->
+        <div class="to-do-footer">
+          <span id="total-tasks">Total tasks:<span id="task-count">0</span></span>
+          <span id="all" onclick=" displayAllTasks()">All</span>
+          <span id="pending" onclick="displayPendingTasks()">Pending</span>
+          <span id="completed" onclick="displayCompletedTasks()">Completed</span>
+        </div> 
+    
     </div>
-   <script src="todoscript.js"></script>
+  </div>
+  <!-- this will link javascript file  -->
+    <script src="todoscript.js"></script>
 </body>
 </html>
+    
+   
+              
+             
+              
+                    
+                        
+
+             
+              
+                  
+              
+           
+        
+      

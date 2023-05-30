@@ -19,10 +19,10 @@ function showNotification(text){
   alert(text);
 }
 
-// 
+// function will trigger when we press addicon 
 function handleInputKeypress(e){
   if(e.type === 'click'){
-      const text = addTaskInput.value;
+      const text = addTaskInput.value;//This will read the value of added text
       if(!text){
           showNotification('Task text cannot be empty') ; 
           return;
@@ -37,7 +37,7 @@ function handleInputKeypress(e){
     }
 }
 
-
+// function used for adding a task
 function addTask(task){
   if(task){
       tasks.push(task);
@@ -50,7 +50,7 @@ function addTask(task){
     }     
 }
 
-
+// function to display all tasks
 function renderList() {
   
   taskList.innerHTML = '';
@@ -61,7 +61,7 @@ function renderList() {
   
 }
 
-
+// This function used to add list elements to DOM
 function addTaskToDOM(task){
   
   const li=document.createElement('li');
@@ -88,7 +88,7 @@ function handleClickListener(e){
       }
 }
 
-
+// function used to mark a task as completed
 function toggleTask(taskId){
    const taskToggle = tasks.filter(task=>{
      return task.id === taskId;
@@ -96,7 +96,7 @@ function toggleTask(taskId){
    );
    if(taskToggle.length>0){
        const currentTask = taskToggle[0];
-       currentTask.done =! currentTask.done;
+       currentTask.done =! currentTask.done;  //eg:if done is false this will set done as true 
        renderList();
        showNotification('task toggled successfully');
        return;
@@ -104,21 +104,20 @@ function toggleTask(taskId){
    showNotification('coudnt toggled the task');
 }
 
-
-
+// function to delete all tasks
 function clearAll(){
-  tasks.splice(0);
+  tasks.splice(0);  //this will delete all elements from tasks array
   renderList();
   showNotification('tasks deleted successfully');
 }
   
-
+// function to delete all completed tasks
 function clearComplete(){
-   var inputElems = document.querySelectorAll('.custom-checkbox'); // Select selected task in list
-   var temp = []; // create  new arr for store completed task
+   var completedElement = document.querySelectorAll('.custom-checkbox'); 
+   var temp = []; 
 
    for (var i = 0; i < tasks.length; i++) {
-     if (inputElems[i].checked === true) {
+     if (completedElement[i].checked === true) {
         temp.push(tasks[i]);
       }
    }
@@ -126,19 +125,20 @@ function clearComplete(){
    var j = 0;
    for (i = 0; i < tasks.length; i++) {
       if (tasks[i] === temp[j]) {
-        tasks.splice(i, 1);//if task store in temp array than remove from item array
+        tasks.splice(i, 1);
         j++;
-        i--;//Array.length -1 because 1 element splice than i-- use for back
+        i--;
       }
     }
    renderList(); 
+   showNotification('cleared completed tasks sucessfully ');
 
 }
 
 
-
+// function to delete a task
 function deleteTask(taskId){
-   const newTasks = tasks.filter(task=>{
+   const newTasks = tasks.filter(task=>{   //newtasks will get an array which doesn't include deleted task
        return task.id !== taskId });
    tasks = newTasks;
    renderList();
@@ -147,7 +147,7 @@ function deleteTask(taskId){
 
 
 
-
+// function to display all tasks
 function displayAllTasks() {
   const tasks = document.querySelectorAll('#list-container li');
   tasks.forEach(task => {
